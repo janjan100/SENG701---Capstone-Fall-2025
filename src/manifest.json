@@ -3,9 +3,10 @@
   "description": "Basic level Extension to compare and contrast other installed extensions",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": [
-    "management.id"
-  ]
+  "permissions": [ "management" ], 
+  "background":{ 
+    "service_worker":"background.js"
+  }
   ,"action": {
     "default_popup": "welcome.html",
     "default_icon": "extensionicon.png"
