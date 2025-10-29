@@ -1,7 +1,11 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "../../../src"
+		},
+		{
+			"name": "SENG701---Capstone-Fall-2025",
+			"path": ".."
 		}
 	]
 }

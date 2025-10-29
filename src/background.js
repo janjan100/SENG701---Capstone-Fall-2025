@@ -9,7 +9,7 @@ chrome.management.getAll((extensions) => { //arrow function
     let exetensions_version = ext.version; 
     let extensions_enabled = ext.enabled;
     let exetensions_permissions = ext.permissions;
-   console.log(exetensions_version, extensions_name, extensions_enabled, exetensions_permissions);
+   console.log("These are the data about your installed extensions: " + exetensions_version, extensions_name, extensions_enabled, exetensions_permissions);
   // variable declared for easier changing and removal 
   });
 });
@@ -22,7 +22,9 @@ chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
   console.log("The value of webRTCIPHandlingPolicy is " + boolValue); 
 });
  
-
+chrome.privacy.services.passwordSavingEnabled.get({}), (details) => {
+  console.log(details);//
+};
 
      //prints meta data about installed extensions. Needs array to print
      // 
