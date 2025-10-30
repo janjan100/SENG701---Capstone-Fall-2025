@@ -2,7 +2,7 @@
 
 
 
-
+//core function 1
 chrome.management.getAll((extensions) => { //arrow function 
   extensions.forEach(ext => {
     let extensions_name = ext.name;
@@ -23,8 +23,13 @@ chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
 });
  
 chrome.privacy.services.passwordSavingEnabled.get({}), (details) => {
-  console.log(details);//
+  console.log(details.value);//
 };
+
+chrome.privacy.websites.thirdPartyCookiesAllowed.get({}), (details) => {
+  let thirdParty = details.value;
+  console.log("The third party value cookies allowed value is:  " + thirdParty);
+}
 
      //prints meta data about installed extensions. Needs array to print
      // 
