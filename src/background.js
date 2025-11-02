@@ -53,3 +53,15 @@ navigator.userAgentData.getHighEntropyValues(fields)
 
   console.log(navigator.userAgentData.brands);
 
+
+  //notification API, not working and needs additional info
+let extendNotification = "plugin-Notification";
+chrome.notifications.create("notificationId",{
+  type:"basic",
+iconUrl:extensionicon.png,
+title: "Notification example",
+message:"Welcome",
+}
+)
+
+
