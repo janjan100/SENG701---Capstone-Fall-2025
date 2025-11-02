@@ -9,3 +9,6 @@ button{
   gap: 10px;
     
 }
+img {
+  border-radius: 75px;
+}
