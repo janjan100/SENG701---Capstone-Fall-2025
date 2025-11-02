@@ -27,10 +27,23 @@ chrome.privacy.services.passwordSavingEnabled.get({}), (details) => {
 };
 
 chrome.privacy.websites.thirdPartyCookiesAllowed.get({}), (details) => {
-  let thirdParty = details.value;
+  const thirdParty = details.value;
   console.log("The third party value cookies allowed value is:  " + thirdParty);
 }
 
      //prints meta data about installed extensions. Needs array to print
      // 
     
+const fields = ["platform", "architecture", "model", "brands", "mobile"];
+ 
+navigator.userAgentData.getHighEntropyValues(fields)
+  .then(result => {
+    fields.forEach(field => {
+      if(result[field]) {
+        console.log(`${field} is available`);
+      } else {
+        console.log(`${field} is NOT available`);
+      }
+    });
+  })
+  .catch(err => console.error(err));
