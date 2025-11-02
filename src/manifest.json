@@ -3,7 +3,7 @@
   "description": "Basic level Extension to compare and contrast other installed extensions",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": [ "management" , "privacy"], 
+  "permissions": [ "management" , "privacy", "notifications","alarm"], 
   "background":{ 
     "service_worker":"background.js"
   }
