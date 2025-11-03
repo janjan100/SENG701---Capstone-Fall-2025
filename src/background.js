@@ -1,6 +1,6 @@
 
 
-alert("Please your console to inspect values! ")
+alert("Please inpspect the console to view meta about extensions and values. Thank you ")
 
 //core function 1
  //prints meta data about installed extensions. Needs array to print
@@ -35,7 +35,7 @@ chrome.privacy.websites.thirdPartyCookiesAllowed.get({}), (details) => {
   console.log("The third party value cookies allowed value is:  " + thirdParty);
 }
 
-//high 
+//
 const fields = ["platform", "architecture", "model", "brands", "mobile"];
  //
 navigator.userAgentData.getHighEntropyValues(fields)
@@ -62,6 +62,7 @@ iconUrl:extensionicon.png,
 title: "Notification example",
 message:"Welcome",
 }
+
 )
 
 
