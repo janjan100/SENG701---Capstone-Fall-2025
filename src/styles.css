@@ -10,5 +10,11 @@ button{
     
 }
 img {
-  border-radius: 75px;
+  border-radius: 45px;
+}
+
+html
+{
+    width: 400px;  /* max: 800px, changes window size of plugin */
+    height: 400px; /* max: 600px */
 }
