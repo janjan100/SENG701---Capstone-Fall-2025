@@ -11,10 +11,21 @@
 </head>
 
 <body>
-  <h1>Security Extension</h1>
+  <h1>iBrowse</h1>
+  <h2> Security Extension </h2>
+  <h3>Welcome! This is a extension that helps you be  more informed about the data and permissions that your extensions use and collect! To view the data please right click on this plug in, and click inspect to view console. </h3>
   <script src="background.js"></script> 
-<button id="button1"button> Show me meta information about installed extensions </button>
-<button id="button2"button> Show me permissions about installed extensions </button>
+<!--<button id="button1"button> Show me meta information about installed extensions </button>
+<button id="button2"button> Show me permissions about installed extensions </button>-->
+<h3> Here are the unique features and options: </h3>
+<select name="myDropdown" id="myDropdown">
+  <option value="option1">Display the list of installed extensions (name, version, enabled state) and declared permissions.</option>
+  <option value="option2">Shows current states for key privacy toggles (e.g., third-party cookies,WebRTCIP policy, password saving, Safe Browsing/ETP levels).</option>
+  <option value="option3">Shows the availability (yes/no) of common high-entropy surfaces without capturing raw fingerprints.</option>
+  <option value="option4">Compares collected privacy data and provide a privacy score.</option>
+  <option value="option5">Collects privacy and premission data of popular extensions (Without installation) and shows comparision along with
+installed extensions.</option>
+</select>
 </body>
 
 
