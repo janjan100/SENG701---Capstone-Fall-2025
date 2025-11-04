@@ -1,4 +1,4 @@
-# SENG701---Capstone-Fall-2025
+# SENG701---Capstone-Fall-2025 / iBrowse Extension
 Capstone Project iBrowse
 
 This plug in extension displays the list of installed extensions (name, version, enabled state) and declared permissions, 
