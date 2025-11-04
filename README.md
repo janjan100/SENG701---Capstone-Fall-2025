@@ -6,16 +6,21 @@ current states for key privacy toggles (e.g., third-party cookies, WebRTC
 IP policy, password saving, Safe Browsing/ETP levels), and the availability (yes/no) of common high-entropy surfaces without capturing raw fingerprints.
 High-entropy in web browser security relates to properties that uniquely identify a browser, and specific data of a browser.
 
-To deploy this browser extension on Google chrome and Microsoft Edge do the following below:
+Google Chrome: 
+To locate the extension manager page, click on (...) on the far right corner, then scroll down to extension > manage extensions  or click the on the puzzle icon(extensions plugin) on the right hand corner next to the search bar, and click manage extensions.
+Click on Developer Mode on the top right corner.
+Click on Load unpacked and locate the src folder of the iBrowse extension saved on local PC.
+iBrowse extension should be displayed in the all extensions screen.
+Click on the puzzle icon(extensions), click on iBrowse extension box, and right click and click on inspect.
+A window called devtools will appear and click on the console to view retrieved data.  
 
-1. Download src folder
-2. Go to Google Chrome Browser, and tap on (...) on right top corner.
-3. Go to Extensions > Manage Extensions.
-4. Tap on Developer Mode on top righ corner.
-5. Tap on Load unpacked and locate src file saved on local PC.
+Microsoft Edge:
+1.To locate the extension manager page, click on (...) on the far right corner, then scroll down to extension > manage extensions  or click the on the puzzle icon(extensions plugin) on the right hand corner next to the search bar, and click manage extensions.
+2.Click on Developer Mode on the top right corner.
+3.Click on Load unpacked and locate the src folder of the iBrowse extension saved on local PC.
+4.iBrowse extension should be displayed in the all extensions screen.
+5. Click on the puzzle icon(extensions), click on iBrowse extension box, and right click and click on inspect.
+6. A window called devtools will appear and click on the console to view retrieved data.  
 
-To Inspect on console to view data do the following below:
-1. Right click on extension from the extension icon (puzzle piece) and click > Inspect.
-2. Click on console option.
 
 
