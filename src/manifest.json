@@ -3,7 +3,8 @@
    "description": "Base level Extension to compare and contrast other installed extensions for Google Chrome and Microsoft Edge browsers.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": [ "management" , "privacy", "notifications"], 
+  "permissions": [ "management" , "privacy", "notifications", "accessibilityFeatures.modify", 
+"accessibilityFeatures.read"], 
   "background":{ 
     "service_worker":"background.js"
   }
