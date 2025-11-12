@@ -64,6 +64,10 @@ chrome.storage.local.get(["key"]).then((result) => {
   console.log("Value is " + result.key);
 });
 
+const colorButton = document.getElementsByClassName("myBtn");
 
-
-
+function changeColor(){
+  document.body.style.backgroundColor = 'pink';
+}
+colorButton.addEventListener("click",changeColor);
+//document.querySelectorAll('h1').style.color = "white";

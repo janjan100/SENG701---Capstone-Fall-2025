@@ -32,11 +32,13 @@ select {
   padding: 5px; 
   
 }
-.myBtn{
+#myBtn{
   background-color: red;
   transition: background-color 0.5s;
+ 
+
 }
 
-.myBtn:hover{
+#myBtn:hover{
   background-color:blue;
 }
