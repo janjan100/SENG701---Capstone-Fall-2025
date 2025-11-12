@@ -54,15 +54,16 @@ navigator.userAgentData.getHighEntropyValues(fields)
 
  console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
 
-  //notification API, not working and needs additional info
-//let extendNotification = "plugin-Notification";
-//chrome.notifications.create("notificationId",{
-//  type:"basic",
-//iconUrl:extensionicon.png,
-//title: "Notification example",
-///message:"Welcome",
-//}
 
-//)
+
+ chrome.storage.local.set({ key: value }).then(() => {
+  console.log("Value is set");
+});
+
+chrome.storage.local.get(["key"]).then((result) => {
+  console.log("Value is " + result.key);
+});
+
+
 
 
