@@ -1,5 +1,4 @@
 
-
 alert("Please inspect the console to view metadata about extensions and values. Thank you. ")
 
 //core function 1
@@ -22,19 +21,19 @@ chrome.management.getAll((extensions) => { //arrow function
  
  // API for webRTCIPHandlingPolicy
 chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
-  const boolValue  = details.value;
-  console.log("The webRTCIPHandlingPolicy is " + boolValue); 
+  const webpRTCIPolicies  = details.value;
+  console.log("The webRTCIPHandlingPolicy state is " + webpRTCIPolicies); 
 });
 
 //API for passwordSavingEnabled 
 chrome.privacy.services.passwordSavingEnabled.get({}), (details) => {
  const passwordSaving = details.value;
-  console.log("The password Saving Enabled setting is :  ", passwordSaving);//
+  console.log("The password Saving Enabled setting of the browser :  ", passwordSaving);//
 };
 
 chrome.privacy.websites.thirdPartyCookiesAllowed.get({}), (details) => {
   const thirdParty = details.value;
-  console.log("The third party value cookies allowed value is:  " , thirdParty);
+  console.log(`The third party value cookies allowed value is: ${thirdParty}`);
 }
 
 //
@@ -55,19 +54,11 @@ navigator.userAgentData.getHighEntropyValues(fields)
  console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
 
 
-
- chrome.storage.local.set({ key: value }).then(() => {
-  console.log("Value is set");
-});
-
-chrome.storage.local.get(["key"]).then((result) => {
-  console.log("Value is " + result.key);
-});
-
-const colorButton = document.getElementsByClassName("myBtn");
+// const element = document.getElementById('myBtn');
+ // function changeColor(){
+const button = document.getElementById('myBtn');
+button.addEventListener("click",changeColor);
 
 function changeColor(){
-  document.body.style.backgroundColor = 'pink';
+document.body.style.backgroundColor = 'lightblue';
 }
-colorButton.addEventListener("click",changeColor);
-//document.querySelectorAll('h1').style.color = "white";
