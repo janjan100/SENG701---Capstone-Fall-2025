@@ -39,6 +39,25 @@ select {
 
 }
 
+#myBtn2{
+  background-color: coral;
+  transition: background-color 0.5s;
+}
+
+.flex-parent {
+  display: flex;
+}
+.jc-center {
+  justify-content: center;
+  margin: 30px;
+}
+button.margin-right {
+  margin-right: 20%;
+}
 #myBtn:hover{
   background-color:blue;
+}
+
+#myBtn2:hover{
+  background-color: pink;
 }
