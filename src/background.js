@@ -54,18 +54,18 @@ navigator.userAgentData.getHighEntropyValues(fields)
  console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
 
 
-// const element = document.getElementById('myBtn');
- // function changeColor(){
-const button = document.getElementById('myBtn');
-button.addEventListener("click",changeColor);
-
-function changeColor(){
-document.body.style.backgroundColor = 'lightblue';
+const element2 = document.getElementById('myBtn2');
+ 
+element2.addEventListener("click", changeColor2);
+ 
+function changeColor2() {
+  document.body.style.backgroundColor = 'red';
 }
 
-const dictionaries = document.getElementById('myBtn3')
-function addLink(){
-
+const element1 = document.getElementById('myBtn1');
+ 
+element2.addEventListener("click", changeColor1);
+ 
+function changeColor1() {
+  document.body.style.backgroundColor = 'purple';
 }
-dictionaries.addEventListener("click", )
-d
