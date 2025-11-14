@@ -54,6 +54,17 @@ navigator.userAgentData.getHighEntropyValues(fields)
  console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
 
 
+ //button 1 for changing color 
+const element1 = document.getElementById('myBtn1');
+ 
+element2.addEventListener("click", changeColor1);
+ 
+function changeColor1() {
+  document.body.style.backgroundColor = 'purple';
+}
+
+
+ //button 2 for changing color 
 const element2 = document.getElementById('myBtn2');
  
 element2.addEventListener("click", changeColor2);
@@ -62,10 +73,3 @@ function changeColor2() {
   document.body.style.backgroundColor = 'red';
 }
 
-const element1 = document.getElementById('myBtn1');
- 
-element2.addEventListener("click", changeColor1);
- 
-function changeColor1() {
-  document.body.style.backgroundColor = 'purple';
-}
