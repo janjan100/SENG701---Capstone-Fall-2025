@@ -1,5 +1,5 @@
 
-alert("Please inspect the console to view metadata about extensions and values. Thank you. ")
+
 
 //core function 1
  //prints meta data about installed extensions. Needs array to print
@@ -56,16 +56,3 @@ navigator.userAgentData.getHighEntropyValues(fields)
 
 // const element = document.getElementById('myBtn');
  // function changeColor(){
-const button = document.getElementById('myBtn');
-button.addEventListener("click",changeColor);
-
-function changeColor(){
-document.body.style.backgroundColor = 'lightblue';
-}
-
-const dictionaries = document.getElementById('myBtn3')
-function addLink(){
-
-}
-dictionaries.addEventListener("click", )
-d
