@@ -1,10 +1,7 @@
-
-console.log("Please check below to  console to view metadata about extensions and values. Thank you. ")
-
-
-//core function 1
- //prints meta data about installed extensions. Needs array to print
 //uses managament API. Cannot connect directly. Need getAll()
+console.log("Inspect the console for metadata.");
+
+
 chrome.management.getAll((extensions) => { //arrow function 
   extensions.forEach(ext => {
     let extensions_name = ext.name;
@@ -54,7 +51,9 @@ navigator.userAgentData.getHighEntropyValues(fields)
 
  console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
 
+const element2 = document.getElementById('myBtn2');
+element2.addEventListener("click", changeColor2);
 
-// const element = document.getElementById('myBtn');
- // function changeColor(){
-
+function changeColor2() {
+    document.body.style.backgroundColor = 'red';
+}
