@@ -1,4 +1,3 @@
-console.log("Please check below to  console to view metadata about extensions and values. Thank you. ")
 
 
 // Button 1

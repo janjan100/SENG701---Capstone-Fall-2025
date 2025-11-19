@@ -1,4 +1,5 @@
 
+console.log("Please check below to  console to view metadata about extensions and values. Thank you. ")
 
 
 //core function 1
@@ -56,3 +57,4 @@ navigator.userAgentData.getHighEntropyValues(fields)
 
 // const element = document.getElementById('myBtn');
  // function changeColor(){
+
