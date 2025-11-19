@@ -2,7 +2,7 @@
 console.log("Inspect the console for metadata.");
 
 
-chrome.management.getAll((extensions) => { //arrow function 
+chrome.management.getAll((extensions) => { 
   extensions.forEach(ext => {
     let extensions_name = ext.name;
     let exetensions_version = ext.version; 
@@ -14,9 +14,6 @@ chrome.management.getAll((extensions) => { //arrow function
 
   });
 });
- 
-
- 
  // API for webRTCIPHandlingPolicy
 chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
   const webpRTCIPolicies  = details.value;
@@ -25,7 +22,7 @@ chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
 
 //API for passwordSavingEnabled 
 chrome.privacy.services.passwordSavingEnabled.get({}), (details) => {
- const passwordSaving = details.value;
+  const passwordSaving = details.value;
   console.log("The password Saving Enabled setting of the browser :  ", passwordSaving);//
 };
 
@@ -48,12 +45,6 @@ navigator.userAgentData.getHighEntropyValues(fields)
     });
   })
   .catch(err => console.error(err));
+console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
 
- console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
 
-const element2 = document.getElementById('myBtn2');
-element2.addEventListener("click", changeColor2);
-
-function changeColor2() {
-    document.body.style.backgroundColor = 'red';
-}
