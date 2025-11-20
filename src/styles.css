@@ -21,7 +21,7 @@ html
 option::checkmark {
   order: 1;
   margin-left: auto;
-  content:"☑️";
+
 }
 ::picker(select) {
   opacity: 0;
@@ -32,15 +32,8 @@ select {
   padding: 5px; 
   
 }
-#myBtn1{
-  background-color: red;
-  transition: background-color 0.5s;
- 
-
-}
-
-#myBtn2{
-  background-color: coral;
+button{
+  background-color:#AECCE4; 
   transition: background-color 0.5s;
 }
 
@@ -54,10 +47,7 @@ select {
 button.margin-right {
   margin-right: 20%;
 }
-#myBtn1:hover{
+button:hover{
   background-color:blue;
 }
 
-#myBtn2:hover{
-  background-color: pink;
-}
