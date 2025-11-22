@@ -35,6 +35,8 @@ select {
 button{
   background-color:#AECCE4; 
   transition: background-color 0.5s;
+  border-radius: 4px;
+  display: inline-block;
 }
 
 .flex-parent {

@@ -16,13 +16,14 @@ document.body.style.backgroundColor = "#141479ff";
 document.body.style.color = "white";
 }*/
 //
+/*let LargeText
 const element3 = document.getElementById('myBtn3');
 element3.addEventListener("click",changeSize);
 function changeSize(){
 document.body.style.fontSize = "large";
 }
 
-
+*/
 
 //
 let darkMode = false;
@@ -37,4 +38,17 @@ function toggleDarkMode() {
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
     }
+}
+
+
+let largeText = false;
+const element3 = document.getElementById('myBtn3');
+element3.addEventListener("click", toggleFontSize);
+function toggleFontSize(){
+    largeText = !largeText;
+    if (largeText) {
+     document.body.style.fontSize = "large";
+    } else {
+        document.body.style.fontSize = "small"; // resets to default
+    }
 }
