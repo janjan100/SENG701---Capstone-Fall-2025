@@ -8,7 +8,7 @@ chrome.management.getAll((extensions) => {
     let exetensions_version = ext.version; 
     let extensions_enabled = ext.enabled;
     let exetensions_permissions = ext.permissions;
-   console.log("These are the names, version, enabled states, and permissons of your installed extensions: " + extensions_name, 
+    console.log("Names, version, enabled state, and permissons of your installed extensions: ", extensions_name, 
     exetensions_version, extensions_enabled, exetensions_permissions);
   // variable declared for easier changing and removal 
 
@@ -32,7 +32,12 @@ chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
 
 chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
   const safeBrowsing = details.value;
-  console.log("Safe browsing enabled:", safeBrowsing);
+  console.log("Safe browsing setting enabled:", safeBrowsing);
+});
+
+chrome.privacy.websites.doNotTrackEnabled.get({}, (details) => {
+  const doNotTrackEnabled = details.value;
+  console.log("DoNotTrack setting enabled: ")
 });
 
 //
