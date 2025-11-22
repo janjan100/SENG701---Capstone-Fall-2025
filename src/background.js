@@ -17,7 +17,7 @@ chrome.management.getAll((extensions) => {
  // API for webRTCIPHandlingPolicy
 chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
   const webpRTCIPolicies  = details.value;
-  console.log("The webRTCIPHandlingPolicy enabled: " , webpRTCIPolicies); 
+  console.log("WebRTCIPHandlingPolicy enabled:", webpRTCIPolicies); 
 });
 
 //API for passwordSavingEnabled 
@@ -37,7 +37,7 @@ chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
 
 chrome.privacy.websites.doNotTrackEnabled.get({}, (details) => {
   const doNotTrackEnabled = details.value;
-  console.log("DoNotTrack setting enabled: ")
+  console.log("DoNotTrack setting enabled:", doNotTrackEnabled)
 });
 
 //
@@ -47,9 +47,9 @@ navigator.userAgentData.getHighEntropyValues(fields)
   .then(result => {
     fields.forEach(field => {
       if(result[field]) {
-        console.log(`${field} high entropy property is available`);
+        console.log(`${field} High entropy property is available`);
       } else {
-        console.log(`${field} high entropy property is  not available.`);
+        console.log(`${field} High entropy property is  not available.`);
       }
     });
   })
