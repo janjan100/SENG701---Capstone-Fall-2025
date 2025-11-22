@@ -17,7 +17,7 @@ chrome.management.getAll((extensions) => {
  // API for webRTCIPHandlingPolicy
 chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
   const webpRTCIPolicies  = details.value;
-  console.log("The webRTCIPHandlingPolicy state is " + webpRTCIPolicies); 
+  console.log("The webRTCIPHandlingPolicy enabled: " , webpRTCIPolicies); 
 });
 
 //API for passwordSavingEnabled 
@@ -29,6 +29,12 @@ chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
     const thirdParty = details.value;
     console.log("Third-party cookies allowed:", thirdParty);
 });
+
+chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
+  const safeBrowsing = details.value;
+  console.log("Safe browsing enabled:", safeBrowsing);
+});
+
 //
 const fields = ["platform", "architecture", "model", "brands", "mobile"];
  //
