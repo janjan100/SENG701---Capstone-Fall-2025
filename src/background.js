@@ -21,16 +21,14 @@ chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
 });
 
 //API for passwordSavingEnabled 
-chrome.privacy.services.passwordSavingEnabled.get({}), (details) => {
-  const passwordSaving = details.value;
-  console.log("The password Saving Enabled setting of the browser :  ", passwordSaving);//
-};
-
-chrome.privacy.websites.thirdPartyCookiesAllowed.get({}), (details) => {
-  const thirdParty = details.value;
-  console.log(`The third party value cookies allowed value is: ${thirdParty}`);
-}
-
+chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
+    const passwordSaving = details.value;
+    console.log("Password saving enabled:", passwordSaving);
+});
+chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
+    const thirdParty = details.value;
+    console.log("Third-party cookies allowed:", thirdParty);
+});
 //
 const fields = ["platform", "architecture", "model", "brands", "mobile"];
  //
