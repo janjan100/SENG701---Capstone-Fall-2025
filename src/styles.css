@@ -15,21 +15,12 @@ img {
 
 html
 {
-    width: 600px;  /* max: 800px, changes window size of plugin */
+    width: 650px;  /* max: 800px, changes window size of plugin */
     height: 600px; /* max: 600px */
-}
-option::checkmark {
-  order: 1;
-  margin-left: auto;
-
-}
-::picker(select) {
-  opacity: 0;
-  transition: all 0.4s allow-discrete; /*animation*/
 }
 
 select {
-  padding: 5px; 
+  padding: 10px; 
   
 }
 button{
@@ -44,7 +35,8 @@ button{
 }
 .jc-center {
   justify-content: center;
-  margin: 30px;
+  width: 200px;
+  height: 150px;
 }
 button.margin-right {
   margin-right: 20%;
