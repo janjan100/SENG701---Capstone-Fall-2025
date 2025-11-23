@@ -19,10 +19,11 @@ let largeText = false;
 const element3 = document.getElementById('myBtn2');
 element3.addEventListener("click", toggleFontSize);
 function toggleFontSize(){
-    largeText = !largeText;
-    if (largeText) {
-     document.body.style.fontSize = "large";
-    } else {
-        document.body.style.fontSize = "small"; // resets to default
+largeText = !largeText;
+ if (largeText) {
+document.body.style.fontSize = "large";
+ } else 
+    {
+    document.body.style.fontSize = "small"; // resets to default
     }
 }
