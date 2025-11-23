@@ -27,3 +27,7 @@ document.body.style.fontSize = "large";
     document.body.style.fontSize = "small"; // resets to default
     }
 }
+
+function calculatePrivacyScore(PrivacyScore){
+    
+}
