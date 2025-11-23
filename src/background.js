@@ -2,6 +2,7 @@
 console.log("Inspect the console for metadata.");
 
 
+//uses managament API. Cannot connect directly. Need getAll()
 chrome.management.getAll((extensions) => { 
   extensions.forEach(ext => {
     let extensions_name = ext.name;
@@ -32,12 +33,12 @@ chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
 
 chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
   const safeBrowsing = details.value;
-  console.log("Safe browsing setting enabled:", safeBrowsing);
+  console.log("Safe browsing setting enabled:" + safeBrowsing);
 });
 
-chrome.privacy.websites.doNotTrackEnabled.get({}, (details) => {
+chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
   const doNotTrackEnabled = details.value;
-  console.log("DoNotTrack setting enabled:", doNotTrackEnabled)
+  console.log("DoNotTrack setting enabled:" +  doNotTrackEnabled);
 });
 
 //
@@ -54,6 +55,6 @@ navigator.userAgentData.getHighEntropyValues(fields)
     });
   })
   .catch(err => console.error(err));
-console.log("These are the low hint values which are general information of your browser:", navigator.userAgentData.brands);
+console.log("These are the general values of your browser:", navigator.userAgentData.brands);
 
 
