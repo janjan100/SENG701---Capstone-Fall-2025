@@ -4,6 +4,10 @@ console.log("View the console below for information.");
 
 
 
+
+  /*This is an API reference from https://developer.chrome.com/docs/extensions/reference/api/management that collects meta data about extension. Returns data to console. GetAll is a getter, and requires mangement permission in manifest.json to work properly. Prints data about extensions such as name, version, permission, etc... */
+
+
 chrome.management.getAll((extensions) => { 
   extensions.forEach(ext => {
     let extensions_name = ext.name;
@@ -12,40 +16,51 @@ chrome.management.getAll((extensions) => {
     let exetensions_permissions = ext.permissions;
     console.log("Names, version, enabled state, and permissons of your installed extensions: ", extensions_name, 
     extensions_version, extensions_enabled, exetensions_permissions);
-  // variable declared for easier changing and removal
-  /*This is an API reference that collects meta data about extension. Returns data to console. GetAll is a getter, and requires mangement permission in manifest.json to work properly */
+
 
   });
 });
- // API for webRTCIP
-chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
+ // API for webRTCIP handling from https://developer.chrome.com/docs/extensions/reference/api/privacy
+
+ /*This is an API reference that collects meta data about extension. Returns data to console. GetAll is a getter, and requires mangement privacy in manifest.json to work properly. WebRTC IP handling policy controls how a browser exposes your IP address during peer-to-peer connections. */
+
+ chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
   const webpRTCIPolicies  = details.value;
   console.log("WebRTCIPHandlingPolicy enabled:", webpRTCIPolicies); 
 });
 
-//API for passwordSavingEnabled browser setting. Returns state of password Saving Browser setting 
+//API for passwordSavingEnabled browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Returns state of password Saving Browser setting such as true/false/default
 chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
     const passwordSaving = details.value;
     console.log("Password saving enabled:", passwordSaving);
 });
+
+
+
+//API for thirdPartyCookies browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that returns state of thirdPartyCookies Browser setting such as true/false/default.Checks if browser can share cookies with third party
 chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
     const thirdPartyCookies = details.value;
     console.log("Third-party cookies allowed:", thirdPartyCookies);
 });
+
+//API for safeBrowsingEnabled browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that Returns state of safeBrowsing setting such as true/false/default.This setting check if website has phishing and blocks popups. 
 
 chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
   const safeBrowsing = details.value;
   console.log("Safe browsing setting enabled:" + safeBrowsing);
 });
 
+//API for doNotTracked from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that returns state of doNotTracked setting such as true/false/default.This setting prevent cookies be collected and tracking browsing although not effective by itself
+
 chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
   const doNotTrackEnabled = details.value;
   console.log("DoNotTrack setting enabled:" +  doNotTrackEnabled);
 });
 
-//
+// High Entropy Values and low entropy values
 const fields = ["platform", "architecture", "model", "brands", "mobile"];
  //
+// Return whether the state of high entrophy values is available on the browser without sharing specific data 
 navigator.userAgentData.getHighEntropyValues(fields)
   .then(result => {
     fields.forEach(field => {
@@ -56,9 +71,11 @@ navigator.userAgentData.getHighEntropyValues(fields)
       }
     });
   })
+  // catch error function and will print what is the error in case of prob;em
   .catch(err => console.error(err));
-
-  console.log("These are the low entropy values of your browser:", navigator.userAgentData.brands);
+  
+  // will print low entrophy hints
+  console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
 
 // Calculate Privacy Score and produces a numerical score of browser
 function calculatePrivacyScore(PrivacyScore){

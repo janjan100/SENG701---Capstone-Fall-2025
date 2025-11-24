@@ -10,27 +10,29 @@
 </head>
 
 <body> 
+  <!---Title of html, and type of extension-->
   <h1>iBrowse</h1>
   <h2> Security Survey Extension </h2>
   <h3>Welcome! This extension will help you be more informed about your current extensions. 
-    
+<!---Instructions for the user -->
 <p> Here are instructions: 
 To view the data please right click on this window and click inspect to view console. All data will be seen in the console window. </h3>
   
+<!---Drop down list of of uniques features for the user to know what this extension capabilities are -->
 <h3> Here are the unique features and options: </h3>
 <select name="myDropdown" id="myDropdown">
   <option value="option1">Display a list of installed extensions (name, version, enabled state) and declared permissions.</option>
-  <option value="option2">Show current states for key privacy toggles (e.g., third-party cookies,WebRTCIP policy, password saving, Safe Browsing/ETP levels).</option>
+  <option value="option2">Show current states for key privacy toggles(third-party cookies,WebRTCIP policy, password saving, Safe Browsing, DoNotTrack).</option>
   <option value="option3">Show the availability (yes/no) of common high-entropy surfaces without capturing raw fingerprints.</option>
   <option value="option4">Compare collected privacy data and provide a privacy score.</option>
-  <option value="option5">Display a comparison of popular extensions to installed   installed extensions.</option>
+  <option value="option5">Display a comparison of popular extensions to installed extensions.</option>
 </select>
-
+<!---Terms users should know and added image (key)-->
 <h3>Key terms (Terms You should Know)
   <img src="key_icon.png" alt="Lightbulb icon" width="25" height="25" style="float: left; margin: 0px 15px 15px 0px;">
 </h3>
 
-<dl> <!--Start of Key terms users should know for novices  <dd>-->
+<dl> <!--Start of Key terms users should know for new users and sources included -->
 <dt> 
   <img src="cookie_icon.png" alt="Cookie icon" width="15" height="15">
   Cookie</dt>
@@ -61,17 +63,18 @@ Source:https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-prot
 <dd>General information about a browser, and does not uniquely identify the user or browser. For example, a low entropy hint is value that a browser is on a mobile device and does not state which device mobile. </dd>
 <!--End of Key terms users should know for novices  <dd>-->
 <h2 heading> Accessibility features </h2>
-
+<!---Buttons for changing font and color(dark mode), and toogles -->
 <div class="flex-parent jc-center">
-<button id="myBtn2"> Click on me to change front size </button>
-<button id="myBtn3">Click once  to change the page to a dark color</button>
+<button id="myBtn1"> Click once to make the font bigger and click again to return to orginal font size</button>
+<button id="myBtn2">Click once to change the page to a dark color, and click again to return to orginal color </button>
 </div>
-
-<h3> Here are some tips and sugguestion to protect your privacy!
+<!---Tips and recommendations for the user to protect their privacy -->
+<h3> Here are some tips and sugguestions to protect your privacy!
   <img src ="light-bulb_icon.png" alt="Lightbulb icon" width="35" height="35" style="float: left; margin: 0px 15px 15px 0px;"> 
 </h3>
 
 <ol>
+  <!---5 Tips and recommendations for the user to do for changing their browser settings and instructions  -->
   <li>Enable safe Browsing settings!</li>
 <p>This feature will detect phishing websites and block popups. </p>
 Steps for Google Chrome: 
@@ -94,11 +97,12 @@ Edge: Go to Settings > Cookies and site permissions > Pop-ups and redirects > Tu
 </p>
 </ol>
 
+<!---Link of security term incase user wants more term to view. Links to glossary of terms-->
 <p> Right click on link below for security terms! </p>
-<p><a href="https://www.sans.org/security-resources/glossary-of-terms">Click on me to learn more about security terms! You will be directed to SANs institute.</a></p>
+<p><a href="https://www.sans.org/security-resources/glossary-of-terms">Click on me to learn more about security terms! You will be directed to SANs institute glossary of terms .</a></p>
 
 
-<!---button and accessibility feature -->
+<!---Links javascripts and script element.  -->
 <script src="background.js"></script> 
 <script src="Toogles.js"></script> 
 </body>

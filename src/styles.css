@@ -1,28 +1,27 @@
 
-body{
+body{  /* Font for the body. All elements has the same font type*/
   font-family: Helvetica, Arial, sans-serif;
 }
 
+/* Font for the buttons. All elements has the same font type*/
 button{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: flex;
   gap: 10px;
     
 }
+/* Makes the image of the icon rounded*/
 img {
   border-radius: 45px;
 }
 
 html
-{
+{ /* This determines the Size of plugin */
     width: 650px;  /* max: 800px, changes window size of plugin */
     height: 600px; /* max: 600px */
 }
 
-select {
-  padding: 10px; 
-  
-}
+/* Styling for the buttons such as slightly rounded, changes colors for backgroundS*/
 button{
   background-color:#AECCE4; 
   transition: background-color 0.5s;
@@ -30,16 +29,21 @@ button{
   display: inline-block;
 }
 
+/* Styling for buttons to be next to each other*/
 .flex-parent {
   display: flex;
 }
+
+/* Styling for buttons to be next to each other, and size*/
 .jc-center {
   justify-content: center;
  height: 40px;
 }
+/* Styling for buttons to be next to each other*/
 button.margin-right {
   margin-right: 20%;
 }
+/* Styling for buttons to change color when hoovering */
 button:hover{
   background-color:lightseagreen;
 }
