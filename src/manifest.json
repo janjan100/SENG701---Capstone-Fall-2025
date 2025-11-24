@@ -6,8 +6,11 @@
   "permissions": [ "management" , "privacy"], 
   "background":{ 
     "service_worker":"background.js"
-  }
-  ,"action": {
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'"
+  },
+  "action": {
     "default_popup": "welcome.html",
     "default_icon": "extensionicon.png"
   }
