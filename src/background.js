@@ -1,34 +1,36 @@
-//uses managament API. Cannot connect directly. Need getAll()
-console.log("Inspect the console for metadata.");
+
+console.log("View the console below for information.");
+	/* Part of instruction for user to check console for data and shows data below */
 
 
-//uses managament API. Cannot connect directly. Need getAll()
+
 chrome.management.getAll((extensions) => { 
   extensions.forEach(ext => {
     let extensions_name = ext.name;
-    let exetensions_version = ext.version; 
+    let extensions_version = ext.version; 
     let extensions_enabled = ext.enabled;
     let exetensions_permissions = ext.permissions;
     console.log("Names, version, enabled state, and permissons of your installed extensions: ", extensions_name, 
-    exetensions_version, extensions_enabled, exetensions_permissions);
-  // variable declared for easier changing and removal 
+    extensions_version, extensions_enabled, exetensions_permissions);
+  // variable declared for easier changing and removal
+  /*This is an API reference that collects meta data about extension. Returns data to console. GetAll is a getter, and requires mangement permission in manifest.json to work properly */
 
   });
 });
- // API for webRTCIPHandlingPolicy
+ // API for webRTCIP
 chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
   const webpRTCIPolicies  = details.value;
   console.log("WebRTCIPHandlingPolicy enabled:", webpRTCIPolicies); 
 });
 
-//API for passwordSavingEnabled 
+//API for passwordSavingEnabled browser setting. Returns state of password Saving Browser setting 
 chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
     const passwordSaving = details.value;
     console.log("Password saving enabled:", passwordSaving);
 });
 chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
-    const thirdParty = details.value;
-    console.log("Third-party cookies allowed:", thirdParty);
+    const thirdPartyCookies = details.value;
+    console.log("Third-party cookies allowed:", thirdPartyCookies);
 });
 
 chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
@@ -55,6 +57,33 @@ navigator.userAgentData.getHighEntropyValues(fields)
     });
   })
   .catch(err => console.error(err));
-console.log("These are the general values of your browser:", navigator.userAgentData.brands);
 
+  console.log("These are the low entropy values of your browser:", navigator.userAgentData.brands);
+
+// Calculate Privacy Score and produces a numerical score of browser
+function calculatePrivacyScore(PrivacyScore){
+let score = 100;
+
+// Check WebRTC IP policy
+function calculatePrivacyScore(PrivacyScore) {
+  let score = 100;
+
+  // Check WebRTC IP policy
+  if (PrivacyScore.webpRTCIPolicies === 'default') {
+    score -= 10;
+  }
+
+  // Check PasswordSaving Enabled setting
+  if (PrivacyScore.passwordSaving === 'true') {
+    score -= 20;
+  }
+
+  // Check third-party cookies setting
+  if (PrivacyScore.thirdPartyCookies === 'true') {
+    score =- 20;
+  }
+
+  return PrivacyScore;
+}
+console.log('Privacy Score:', calculatePrivacyScore(PrivacyScore))}
 
