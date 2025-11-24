@@ -1,7 +1,7 @@
 
 
 let darkMode = false;
-const button2 = document.getElementById('myBtn1');
+const button2 = document.getElementById('myBtn2');
 button2.addEventListener("click", toggleDarkMode);
 function toggleDarkMode() {
     darkMode = !darkMode; // flips between true/false
@@ -16,7 +16,7 @@ function toggleDarkMode() {
 
 
 let largeText = false;
-const element3 = document.getElementById('myBtn2');
+const element3 = document.getElementById('myBtn1');
 element3.addEventListener("click", toggleFontSize);
 function toggleFontSize(){
 largeText = !largeText;
