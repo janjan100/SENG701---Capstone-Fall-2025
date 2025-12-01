@@ -104,3 +104,9 @@ function calculatePrivacyScore(PrivacyScore) {
 }
 console.log('Privacy Score:', calculatePrivacyScore(PrivacyScore))}
 
+//Sends data from console to popupUI/ extension UI 
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+if (msg.action === "getData") {
+sendResponse({ message: "Data coming from background script!" });
+}
+});
