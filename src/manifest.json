@@ -18,9 +18,13 @@
   }
   
 ]
+ ,"icons": {
+    "48": "iBrowse_icon.png"
+  }
 ,
   "action": {
     "default_popup": "iBrowse_page.html",
-    "default_icon": "iBrowse_icon.png"
+    "default_icon": "iBrowse_icon.png",
+    "title": "Security Survey Extension for Google Chrome + Microsoft Edge"
   }
 }
