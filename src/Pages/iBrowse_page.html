@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Security comparsion Extension </title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/src/Styles/styles.css">
   <img src="iBrowse_icon.png" alt="Extension image" width="125" height="125">
 </head>
 
@@ -29,12 +29,12 @@ To view the data please right click on this window and click inspect to view con
 </select>
 <!---Terms users should know and added image (key)-->
 <h3>Key terms (Terms You should Know)
-  <img src="Images/light-bulb_icon.png" alt="Lightbulb icon" width="25" height="25" >
+  <img src="/src/Images/light-bulb_icon.png" alt="Lightbulb icon" width="25" height="25" >
 </h3>
 
 <dl> <!--Start of Key terms users should know for new users and sources included -->
 <dt> 
-  <img src="Images/cookie_icon.png" alt="Cookie icon" width="15" height="15">
+  <img src="/src/Images/cookie_icon.png" alt="Cookie icon" width="15" height="15">
   Cookie</dt>
 <dd>Small files of information of that a web server generates and sends to a web browser. Cookies help inform websites about the user, enabling the websites to personalize the user experience. Source: https://www.cloudflare.com/learning/privacy/what-are-cookies/</dd>
 
@@ -42,12 +42,12 @@ To view the data please right click on this window and click inspect to view con
 <dd>Cookie that belongs to a domain other than the one displayed in the browser. Third-party cookies are most often used for tracking purposes. Source: https://www.cloudflare.com/learning/privacy/what-are-cookies/</dd>
 
 <dt>
-  <img src="Images/check-mark1_.png" alt="Green check mark" width="15" height="15">
+  <img src="/src/Images/check-mark1_.png" alt="Green check mark" width="15" height="15">
   Hypertext transfer protocol secure(HTTPS)</dt>
 <dd> The secure version of HTTP, and primary protocol used to send data between a web browser and a website.Source:https://www.cloudflare.com/learning/ssl/what-is-https/</dd>
 
 <dt> 
-<img src="Images/letter-x_.png" alt="Red letter X" width="15" height="15">
+<img src="/src/Images/letter-x_.png" alt="Red letter X" width="15" height="15">
   Hypertext Transfer Protocol (HTTP)
 </dt>
 <dd> The foundation of the World Wide Web, and is used to load webpages using hypertext links. HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack, however not secure.</dd>
@@ -106,7 +106,8 @@ Edge: Go to Settings > Cookies and site permissions > Pop-ups and redirects > Tu
 
 <!---Links javascripts and script element.  -->
 <script src="background.js"></script> 
-<script src="Toogles.js"></script> 
+<script src="/src/services/popup.js"></script> 
+<script src="/src/services/Toogles.js"></script>
 </body>
 
 
