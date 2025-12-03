@@ -92,7 +92,9 @@ if (privacyData.doNotTrackEnabled === "true"){
   score =+20;
 }
 
-if(privacyData.safeBrowsingEnabled === "true")
+if(privacyData.safeBrowsingEnabled === "true"){
+  
+}
  // Count high-entropy fingerprinting surfaces
 const fingerprintRisk = privacyData.highEntropySurfaces.filter(s => s.available).length;
 score -= fingerprintRisk * 5;
