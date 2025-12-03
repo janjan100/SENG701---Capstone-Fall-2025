@@ -77,36 +77,36 @@ navigator.userAgentData.getHighEntropyValues(fields)
   // will print low entrophy hints
   console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
 
-// Calculate Privacy Score and produces a numerical score of browser
-function calculatePrivacyScore(PrivacyScore){
+
+function calculatePrivacyScore1(privacyData) {
+
 let score = 100;
+ // Check third-party cookies (you're already getting this!)
 
-// Check WebRTC IP policy
-function calculatePrivacyScore(PrivacyScore) {
-  let score = 100;
-
-  // Check WebRTC IP policy
-  if (PrivacyScore.webpRTCIPolicies === 'default') {
-    score -= 10;
-  }
-
-  // Check PasswordSaving Enabled setting
-  if (PrivacyScore.passwordSaving === 'true') {
-    score -= 20;
-  }
-
-  // Check third-party cookies setting
-  if (PrivacyScore.thirdPartyCookies === 'true') {
-    score =- 20;
-  }
-
-  return PrivacyScore;
+if (privacyData.thirdPartyCookies === "true") {
+  score -= 15;
 }
-console.log('Privacy Score:', calculatePrivacyScore(PrivacyScore))}
+
+
+if (privacyData.doNotTrackEnabled === "true"){
+  score =+20;
+}
+
+if(privacyData.safeBrowsingEnabled === "true")
+ // Count high-entropy fingerprinting surfaces
+const fingerprintRisk = privacyData.highEntropySurfaces.filter(s => s.available).length;
+score -= fingerprintRisk * 5;
+return Math.max(score, 0); // Keep between 0-100
+}
+
+// Display the score
+
+console.log('Privacy Score:', calculatePrivacyScore1());
 
 //Sends data from console to popupUI/ extension UI 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 if (msg.action === "getData") {
 sendResponse({ message: "Data coming from background script!" });
 }
+return true;
 });
