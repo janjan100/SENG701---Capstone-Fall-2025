@@ -78,37 +78,69 @@ navigator.userAgentData.getHighEntropyValues(fields)
   console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
 
 
-function calculatePrivacyScore1(privacyData) {
-
+// Display the score
+// Calculate privacy score based on your existing data collection
+function calculatePrivacyScore(privacyData) {
 let score = 100;
- // Check third-party cookies (you're already getting this!)
 
 if (privacyData.thirdPartyCookies === "true") {
-  score -= 15;
+score -= 15;
+}
+// Check WebRTC IP policy
+if (privacyData.webRTCIPHandlingPolicy === 'default') {
+score -= 10; // IP can leak
+}
+// Check Safe Browsing level
+if (privacyData.safeBrowsingEnabled === 'none') {
+score -= 20;
 }
 
-
-if (privacyData.doNotTrackEnabled === "true"){
-  score =+20;
+if(privacyData.doNotTrackEnabled === 'none'){
+  score -=20;
 }
 
-if(privacyData.safeBrowsingEnabled === "true"){
+if(privacyData.passwordSavingEnabled === 'true'){
+score =-20;
+}
   
-}
- // Count high-entropy fingerprinting surfaces
-const fingerprintRisk = privacyData.highEntropySurfaces.filter(s => s.available).length;
+{
+  // Count high-entropy fingerprinting surfaces
+const fingerprintRisk = privacyData.getHighEntropyValues.filter(s =>
+s.available).length;
 score -= fingerprintRisk * 5;
 return Math.max(score, 0); // Keep between 0-100
 }
 
-// Display the score
-
-console.log('Privacy Score:', calculatePrivacyScore1());
-
-//Sends data from console to popupUI/ extension UI 
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-if (msg.action === "getData") {
-sendResponse({ message: "Data coming from background script!" });
 }
-return true;
-});
+
+//let result = calculatePrivacyScore(privacyData);
+// Display the score
+//console.log('Privacy Score:', result);
+
+
+
+
+
+const opt = {
+type: "basic",
+  iconUrl: "Images/cookie_icon.png",
+  title: "This is a notification",
+  message: "Hello there!",
+  buttons: [{ title: "iBrowse notifications" }],
+  imageUrl: "Images/cookie_icon.png",
+}
+  const notificationOptions = {
+  type: "basic",
+  iconUrl: "Images/cookie_icon.png",
+  title: "This is a notification",
+  message: "Hello there!",
+  buttons: [{ title: "iBrowse notifications" }]
+};
+
+chrome.notifications.create(
+  "extension-notification",   // Notification ID
+  notificationOptions,        // Options object
+  (message) => {       // Callback after creation
+    console.log("Notification created:",notificationOptions());
+  }
+);
