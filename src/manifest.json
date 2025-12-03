@@ -3,7 +3,7 @@
   "description": "Base level Extension to compare and contrast other installed extensions for Google Chrome and Microsoft Edge browsers.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": [ "management" , "privacy",  "nativeMessaging"], 
+  "permissions": [ "management" , "privacy",  "nativeMessaging", "notifications"], 
   "background":{ 
     "service_worker":"background.js"
   },
@@ -12,13 +12,20 @@
   }, 
 
   "web_accessible_resources": [
-  {
-    "resources": ["Images/*"],
-    "matches": ["<all_urls>"]
-  }
-  
-]
- ,"icons": {
+    {
+      "resources": ["Images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["background.js","toogles.js","popup.js"]
+    }
+  ],
+
+"icons": {
 "48": "iBrowse_icon.png"
 
   }
