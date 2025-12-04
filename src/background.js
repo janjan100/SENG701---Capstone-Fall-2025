@@ -3,8 +3,6 @@ console.log("View the console below for information.");
 	/* Part of instruction for user to check console for data and shows data below */
 
 
-
-
   /*This is an API reference from https://developer.chrome.com/docs/extensions/reference/api/management that collects meta data about extension. Returns data to console. GetAll is a getter, and requires mangement permission in manifest.json to work properly. Prints data about extensions such as name, version, permission, etc... */
 
 
