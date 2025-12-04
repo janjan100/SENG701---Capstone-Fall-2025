@@ -129,13 +129,7 @@ type: "basic",
   buttons: [{ title: "iBrowse notifications" }],
   imageUrl: "Images/cookie_icon.png",
 }
-  const notificationOptions = {
-  type: "basic",
-  iconUrl: "Images/cookie_icon.png",
-  title: "This is a notification",
-  message: "Hello there!",
-  buttons: [{ title: "iBrowse notifications" }]
-};
+
 
 chrome.notifications.create(
   "extension-notification",   // Notification ID
