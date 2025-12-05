@@ -129,10 +129,3 @@ type: "basic",
 }
 
 
-chrome.notifications.create(
-  "extension-notification",   // Notification ID
-  notificationOptions,        // Options object
-  (message) => {       // Callback after creation
-    console.log("Notification created:",notificationOptions());
-  }
-);
