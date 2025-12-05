@@ -7,7 +7,8 @@
   "manifest_version": 3,
   "permissions": [ "management" , "privacy",  "nativeMessaging", "notifications"], 
   "background":{ 
-    "service_worker":"background.js"
+    "service_worker":"Services/background.js", 
+    "type": "module"
   },
   "content_security_policy": {
     "extension_pages": "default-src 'self'"
@@ -15,7 +16,7 @@
 
   "web_accessible_resources": [
     {
-      "resources": ["src/Images/*"],
+      "resources": ["src/Assets/*"],
       "matches": ["<all_urls>"]
     }
   ],
@@ -23,18 +24,18 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["background.js","toogles.js","popup.js"]
+      "js": ["Scripts/toogles.js","Scripts/popup.js"]
     }
   ],
 
 "icons": {
-"48": "iBrowse_icon.png"
+"48": "Assets/iBrowse_icon.png"
 
   }
 ,
   "action": {
     "default_popup": "iBrowse_page.html", 
-    "default_icon": "iBrowse_icon.png",
+    "default_icon": "Assets/iBrowse_icon.png",
     "title": "Security Survey Extension for Google Chrome + Microsoft Edge"
   }
 }
