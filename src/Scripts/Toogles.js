@@ -2,7 +2,7 @@
 
 let darkMode = false;
 const button2 = document.getElementById('myBtn2');
-button2.addEventListener("click", toggleDarkMode);
+button2.addEventListener("click",toggleDarkMode);
 function toggleDarkMode() {
     darkMode = !darkMode; // flips between true/false
     if (darkMode) {
