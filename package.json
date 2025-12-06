@@ -1,0 +1,25 @@
+{
+  "name": "seng701---capstone-fall-2025",
+  "version": "1.0.0",
+  "description": "Capstone Project iBrowse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janjan100/SENG701---Capstone-Fall-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/janjan100/SENG701---Capstone-Fall-2025/issues"
+  },
+  "homepage": "https://github.com/janjan100/SENG701---Capstone-Fall-2025#readme",
+  "dependencies": {
+    "pup": "^0.0.2",
+    "puppeteer": "^24.32.0"
+  }
+}
