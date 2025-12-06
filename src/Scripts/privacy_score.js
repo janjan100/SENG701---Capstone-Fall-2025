@@ -35,13 +35,10 @@ return Math.max(score, 0); // Keep between 0-100
 }
 
 }
-const privacyData = {
-  
-  },
 
 
 
-let result = calculatePrivacyScore(privacyData);
+//let result = calculatePrivacyScore(privacyData);
 // Display the score
 //(console.log('Privacy Score:', privacyData));
 

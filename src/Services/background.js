@@ -75,50 +75,7 @@ navigator.userAgentData.getHighEntropyValues(fields)
   // will print low entrophy hints
   console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
 
-
-// Display the score
-// Calculate privacy score based on your existing data collection
-function calculatePrivacyScore(privacyData) {
-let score = 100;
-
-if (privacyData.thirdPartyCookies === "true") {
-score -= 15;
-}
-// Check WebRTC IP policy
-if (privacyData.webRTCIPHandlingPolicy === 'default') {
-score -= 10; // IP can leak
-}
-// Check Safe Browsing level
-if (privacyData.safeBrowsingEnabled === 'none') {
-score -= 20;
-}
-
-if(privacyData.doNotTrackEnabled === 'none'){
-  score -=20;
-}
-
-if(privacyData.passwordSavingEnabled === 'true'){
-score =-20;
-}
   
-{
-  // Count high-entropy fingerprinting surfaces
-const fingerprintRisk = privacyData.getHighEntropyValues.filter(s =>
-s.available).length;
-score -= fingerprintRisk * 5;
-return Math.max(score, 0); // Keep between 0-100
-}
-
-}
-
-//let result = calculatePrivacyScore(privacyData);
-// Display the score
-//console.log('Privacy Score:', result);
-
-
-
-
-
 const opt = {
 type: "basic",
   iconUrl: "Images/cookie_icon.png",
