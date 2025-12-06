@@ -24,7 +24,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["Scripts/toogles.js","Scripts/popup.js"]
+      "js": ["Scripts/toogles.js","Scripts/popup.js","Scripts/privacy_score.js"]
     }
   ],
 
