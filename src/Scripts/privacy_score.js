@@ -1,7 +1,7 @@
 // Display the score
 // Calculate privacy score based on your existing data collection
 
-function calculatePrivacyScore(privacyData) {
+/**function calculatePrivacyScore(privacyData) {
 let score = 100;
 
 
@@ -41,4 +41,4 @@ return Math.max(score, 0); // Keep between 0-100
 //let result = calculatePrivacyScore(privacyData);
 // Display the score
 //(console.log('Privacy Score:', privacyData));
-
+//** */

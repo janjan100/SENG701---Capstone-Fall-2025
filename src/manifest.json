@@ -5,7 +5,7 @@
   "description": "Base level Extension to compare and contrast other installed extensions for Google Chrome and Microsoft Edge browsers.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": [ "management" , "privacy",  "nativeMessaging", "notifications"], 
+  "permissions": [ "management" , "privacy",  "nativeMessaging", "notifications", "activeTab"], 
   "background":{ 
     "service_worker":"Services/background.js", 
     "type": "module"
@@ -24,7 +24,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["Scripts/toogles.js","Scripts/popup.js","Scripts/privacy_score.js","Puppeteer_files/Scripts_scraping/scrapers.js"]
+      "js": ["Scripts/toogles.js","Scripts/popup.js","Scripts/privacy_score.js"]
     }
   ],
 

@@ -1,5 +1,4 @@
 
-
 console.log("View the console below for information.");
 	/* Part of instruction for user to check console for data and shows data below */
 
@@ -76,41 +75,20 @@ navigator.userAgentData.getHighEntropyValues(fields)
   // will print low entrophy hints
   console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
 
+//*** */
+import * as cheerio from 'node_modules/cheerio';
+const $ = cheerio.load('<h2 class="title">Hello world</h2>');
 
-const opt = {
-type: "basic",
-  iconUrl: "Images/cookie_icon.png",
-  title: "This is a notification",
-  message: "Hello there!",
-  buttons: [{ title: "iBrowse notifications" }],
-  imageUrl: "Images/cookie_icon.png",
+async function get() {
+  const controller = new AbortController();
+  const request = new Request("https://www.yahoo.com/", {
+    signal: controller.signal,
+  });
+
+  const response = await fetch(request);
+  controller.abort();
+  // The next line will throw `AbortError`
+  const text = await response.text();
+  console.log(text);
 }
-
-
-//
-/**import puppeteer from ../'puppeteer' ../
-
-async function scrapeBrowser(url) {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    page.goto(url);
-    await page.goto(url);
-     const [el] = await page.$x('//*[@id="yDmH0d"]/c-wiz[5]/div/div/main/div/div[1]/div[2]');
-    const src = await el.getProperty('src');
-    const srcTxt = await src.jsonValues();
-    console.log({srcTxt});
-    browser.close();
-}
- scrapeBrowser('https://chromewebstore.google.com/category/extensions?utm_campaign=21676428212&utm_content=167305930939&utm_medium=cpc&utm_source=google&utm_term=chrome%20extension');**/
-import * as cheerio from 'cheerio';
-
-const $ = cheerio.load('<h1>Hello, world!</h1>');
-
-console.log($('h1').text());
-
-
-
-
-
-
 
