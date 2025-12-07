@@ -1,44 +1,38 @@
-// Display the score
-// Calculate privacy score based on your existing data collection
+  //Privacy Score function
+function calculatePrivacyScore(privacyData) {
+    let score = 100;
 
-/**function calculatePrivacyScore(privacyData) {
-let score = 100;
+    // Check third-party cookies
+    if (privacyData.thirdPartyCookiesAllowed) {
+        score -= 15;
+    }
 
+    // Check WebRTC IP policy
+    if (privacyData.webRTCIPHandlingPolicy === 'default') {
+        score -= 10; // IP can leak
+    }
 
+    // Check password saving
+    if (privacyData.passwordSavingEnabled === 'true' ||  privacyData.passwordSavingEnabled === true) {
+        score -= 20;
+    }
 
-if (privacyData.webRTCIPHandlingPolicy === 'default') {
-score -= 10; // IP can leak
+    // Check safe browsing
+    if (privacyData.safeBrowsingEnabled === 'false' ||  privacyData.safeBrowsingEnabled === false) {
+        score -= 20;
+    }
+     // Check if doNotTrack is on
+    if(privacyData.doNotTrackEnabled === 'false' ||  privacyData.doNotTrackEnabled === false){
+      score -=15;
+    }   return score;
 }
-
-if (privacyData.passwordSavingEnabled) {
-score -= 15;
-}
-
-// Check Safe Browsing level
-if (privacyData.thirdPartyCookiesAllowed === 'none') {
-score -= 20;
-}
-
-if(privacyData.safeBrowsingEnabled === 'none'){
-  score -=20;
-}
-
-if(privacyData.doNotTrackEnabled){
-score =-20;
-}
-  
-{
-  // Count high-entropy fingerprinting surfaces
-const fingerprintRisk = (privacyData.getHighEntropyValues || []).filter(s => s.available).length;
-score -= fingerprintRisk * 5;
-return Math.max(score, 0); // Keep between 0-100
-}
-
-}
-
-
-
-//let result = calculatePrivacyScore(privacyData);
-// Display the score
-//(console.log('Privacy Score:', privacyData));
-//** */
+// Object for yourPrivacyData based on current value of browser values. Excluded high entropy values
+const yourPrivacyData ={
+    webRTCIPHandlingPolicy: "default",
+    passwordSavingEnabled: true,
+    thirdPartyCookiesAllowed: true, 
+    safeBrowsingEnabled: true, 
+    doNotTrackEnabled: false, 
+};
+let result = calculatePrivacyScore(yourPrivacyData);
+console.log('Your browser has this privacy Score: ' + result + ' (excluding high entropy surfaces value). ' + ' Please take actions based on recommendations. Thank you for using.');
