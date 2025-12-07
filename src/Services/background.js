@@ -1,4 +1,5 @@
 
+
 console.log("View the console below for information.");
 	/* Part of instruction for user to check console for data and shows data below */
 
@@ -87,7 +88,7 @@ type: "basic",
 
 
 //
-import puppeteer from 'puppeteer'; 
+/**import puppeteer from ../'puppeteer' ../
 
 async function scrapeBrowser(url) {
     const browser = await puppeteer.launch();
@@ -100,4 +101,16 @@ async function scrapeBrowser(url) {
     console.log({srcTxt});
     browser.close();
 }
- scrapeBrowser('https://chromewebstore.google.com/category/extensions?utm_campaign=21676428212&utm_content=167305930939&utm_medium=cpc&utm_source=google&utm_term=chrome%20extension');
+ scrapeBrowser('https://chromewebstore.google.com/category/extensions?utm_campaign=21676428212&utm_content=167305930939&utm_medium=cpc&utm_source=google&utm_term=chrome%20extension');**/
+import * as cheerio from 'cheerio';
+
+const $ = cheerio.load('<h1>Hello, world!</h1>');
+
+console.log($('h1').text());
+
+
+
+
+
+
+
