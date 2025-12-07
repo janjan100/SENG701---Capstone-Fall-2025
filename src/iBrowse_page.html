@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Security comparsion Extension </title>
+  <title>Security Survey Extension  </title>
   <link rel="stylesheet" href="Styles/styles.css">
   <img src="Assets/iBrowse_icon.png" alt="Extension image" width="125" height="125">
 </head>
@@ -13,10 +13,20 @@
   <!---Title of html, and type of extension-->
   <h1>iBrowse</h1>
   <h2> Security Survey Extension </h2>
-  <h3>Welcome! This extension will help you be more informed about your current extensions. 
-<!---Instructions for the user -->
-<p> Here are instructions: 
-To view the data please right click on this window and click inspect to view console. All data will be seen in the console window. </h3>
+  <h3>Hello! This extension will help you be more informed about your current extensions, and share available browser settings, and privacy toogles. 
+<!---Instructions for the user for the console if they wish to view console. User can use button or check console -->
+<p> To view data from the console follow instructions below: </p>
+<ol>
+  <li>
+    Right click on this window 
+  </ll>
+  <li>
+    Click inspect. A window called devtools will appear.
+  </li>
+  <li>
+    Click on inspect.
+  </li>
+</ol>
   
 <!---Drop down list of of uniques features for the user to know what this extension capabilities are -->
 <h3> Here are the unique features listed below: </h3>
@@ -27,6 +37,8 @@ To view the data please right click on this window and click inspect to view con
   <li>Compare collected privacy data and provide a privacy score.</li>
   <li>Display a comparison of popular extensions to installed extensions.</li>
 </ul>
+<button id="myBtn">Get Data</button>
+<div id="output"></div>
 <!---Terms users should know and added image (key)-->
 <h3>Key terms (Terms You should Know)
   <img src="Assets/light-bulb_icon.png" alt="Lightbulb icon" width="25" height="25" >
@@ -67,8 +79,6 @@ Source:https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-prot
 <div class="flex-parent jc-center">
 <button id="myBtn1"> Click once to make the font bigger and click again to return to orginal font size</button>
 <button id="myBtn2">Click once to change the page to a dark color, and click again to return to orginal color </button>
-<button id="myBtn3">Get Data</button>
-<div id="output"></div>
 </div>
 <!---Tips and recommendations for the user to protect their privacy -->
 <h3> Here are some tips and sugguestions to protect your privacy!
@@ -105,9 +115,10 @@ Edge: Go to Settings > Cookies and site permissions > Pop-ups and redirects > Tu
 
 
 <!---Links javascripts and script element.  -->
-<script type="module" src="Scripts/Toogles.js"defer></script>
-<script type="module" src="Scripts/privacy_score.js"></script> 
+<script type="module" src="Scripts/Toogles.js"></script>
 <script type="module" src="Services/background.js"></script> 
+<script type="module" src="Scripts/Privacy_score.js"></script>
+<script type="module" src="Scripts/popup.js"></script>
 </body>
 
 
