@@ -55,9 +55,12 @@ chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
   const doNotTrackEnabled = details.value;
   console.log("DoNotTrack setting enabled:" +  doNotTrackEnabled);
 });
+//API that returns high entropy values
+console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
 
-// High Entropy Values and low entropy values
-const fields = ["platform", "architecture", "model", "brands", "mobile"];
+
+// prints High Entropy Values 
+const fields = ["platform", "architecture", "model", "mobile"];
  //
 // Return whether the state of high entrophy values is available on the browser without sharing specific data 
 navigator.userAgentData.getHighEntropyValues(fields)
@@ -73,6 +76,13 @@ navigator.userAgentData.getHighEntropyValues(fields)
   // catch error function and will print what is the error in case of prob;em
   .catch(err => console.error(err));
   
-  // will print low entrophy hints
-  console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
+  // API for message passing and sending data from console to UI 
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+if (msg.action === "getData") {
+sendResponse({ message: "Data coming from background script!" });
+}
+});
 
+
+
+  
