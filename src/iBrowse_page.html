@@ -19,14 +19,14 @@
 To view the data please right click on this window and click inspect to view console. All data will be seen in the console window. </h3>
   
 <!---Drop down list of of uniques features for the user to know what this extension capabilities are -->
-<h3> Here are the unique features and options: </h3>
-<select name="myDropdown" id="myDropdown">
-  <option value="option1">Display a list of installed extensions (name, version, enabled state) and declared permissions.</option>
-  <option value="option2">Show current states for key privacy toggles(third-party cookies,WebRTCIP policy, password saving, Safe Browsing, DoNotTrack).</option>
-  <option value="option3">Show the availability (yes/no) of common high-entropy surfaces without capturing raw fingerprints.</option>
-  <option value="option4">Compare collected privacy data and provide a privacy score.</option>
-  <option value="option5">Display a comparison of popular extensions to installed extensions.</option>
-</select>
+<h3> Here are the unique features listed below: </h3>
+<ul>
+  <li>Display a list of installed extensions (name, version, enabled state) and declared permissions.</li>
+  <li>Show current states for key privacy toggles(third-party cookies,WebRTCIP policy, password saving, Safe Browsing, and DoNotTrack).</li>
+  <li>Show the availability common high-entropy surfaces without capturing raw fingerprints such as "platform", "architecture", "model", "brands", "mobile".</li>
+  <li>Compare collected privacy data and provide a privacy score.</li>
+  <li>Display a comparison of popular extensions to installed extensions.</li>
+</ul>
 <!---Terms users should know and added image (key)-->
 <h3>Key terms (Terms You should Know)
   <img src="Assets/light-bulb_icon.png" alt="Lightbulb icon" width="25" height="25" >
@@ -105,7 +105,6 @@ Edge: Go to Settings > Cookies and site permissions > Pop-ups and redirects > Tu
 
 
 <!---Links javascripts and script element.  -->
-<script type="module" src="Scripts/popup.js"></script>
 <script type="module" src="Scripts/Toogles.js"defer></script>
 <script type="module" src="Scripts/privacy_score.js"></script> 
 <script type="module" src="Services/background.js"></script> 
