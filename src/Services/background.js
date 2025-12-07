@@ -27,6 +27,7 @@ chrome.management.getAll((extensions) => {
   console.log("WebRTCIPHandlingPolicy enabled:", webpRTCIPolicies); 
 });
 
+
 //API for passwordSavingEnabled browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Returns state of password Saving Browser setting such as true/false/default
 chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
     const passwordSaving = details.value;
@@ -74,21 +75,4 @@ navigator.userAgentData.getHighEntropyValues(fields)
   
   // will print low entrophy hints
   console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
-
-//*** */
-import * as cheerio from 'node_modules/cheerio';
-const $ = cheerio.load('<h2 class="title">Hello world</h2>');
-
-async function get() {
-  const controller = new AbortController();
-  const request = new Request("https://www.yahoo.com/", {
-    signal: controller.signal,
-  });
-
-  const response = await fetch(request);
-  controller.abort();
-  // The next line will throw `AbortError`
-  const text = await response.text();
-  console.log(text);
-}
 
