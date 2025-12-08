@@ -22,7 +22,7 @@ function calculatePrivacyScore(privacyData) { //Privacy Score function
         score -= 20; // If enabled, blocks popups of browser, and detects phishings attacks and fake websites
     }
      // Check if doNotTrack is on
-    if(rivacyData.doNotTrackEnabled === false){
+    if(privacyData.doNotTrackEnabled === false){
       score -=15;
     }   return score;
 }
