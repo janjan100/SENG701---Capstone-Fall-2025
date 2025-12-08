@@ -27,6 +27,7 @@ button{
   transition: background-color 0.5s;
   border-radius: 4px;
   display: inline-block;
+  font-size: 15px;
 }
 
 /* Styling for buttons to be next to each other*/
@@ -37,17 +38,18 @@ button{
 /* Styling for buttons to be next to each other, and size*/
 .jc-center {
   justify-content: center;
- height: 50px;
+ height: 56px;
 }
 /* Styling for buttons to be next to each other*/
 button.margin-right {
-  margin-right: 20%;
+  margin-right: 25px;
 }
 /* Styling for buttons to change color when hoovering */
 button:hover{
-  background-color:lightseagreen;
+  background-color:rgb(150, 215, 255);
 }
 
-
-
-
+/* Styling for lists and list items, changes font */
+ol, li {
+  font-size: medium;
+}
