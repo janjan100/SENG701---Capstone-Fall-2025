@@ -1,6 +1,7 @@
 
-console.log("View the console below for information.");
 	/* Part of instruction for user to check console for data and shows data below */
+console.log("View the console below for information.");
+	
 
 
   /*This is an API reference from https://developer.chrome.com/docs/extensions/reference/api/management that collects meta data about extension. Returns data to console. GetAll is a getter, and requires mangement permission in manifest.json to work properly. Prints data about extensions such as name, version, permission, etc... */
@@ -55,7 +56,7 @@ chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
   const doNotTrackEnabled = details.value;
   console.log("DoNotTrack setting enabled:" +  doNotTrackEnabled);
 });
-//API that returns high entropy values
+//API that returns low entropy values
 console.log("These are the low entropy hint of your browser:", navigator.userAgentData.brands);
 
 
@@ -73,16 +74,39 @@ navigator.userAgentData.getHighEntropyValues(fields)
       }
     });
   })
-  // catch error function and will print what is the error in case of prob;em
+  // catch error function and will print what is the error in case of problem
   .catch(err => console.error(err));
   
-  // API for message passing and sending data from console to UI 
+  // API for message passing and sending data from console to UI. Uses chrome.runtime API. Retrived from https://developer.chrome.com/docs/extensions/develop/concepts/messaging
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-if (msg.action === "getData") {
-sendResponse({ message: "Data coming from background script!" });
-}
+  if (msg.action === "getData") {
+ 
+    chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
+      const thirdPartyCookies = details.value;
+
+       chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
+  const webpRTCIPolicies  = details.value;
+
+chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
+    const passwordSaving = details.value;
 });
 
+      // Send the value back to your UI
+      sendResponse({
+        success: true,
+        thirdPartyCookies: thirdPartyCookies,
+        webpRTCIPolicies: webpRTCIPolicies,
+        passwordSaving: passwordSaving, 
 
 
-  
+
+        });
+      });
+
+    });
+ 
+    // Keeps the message channel open for async work
+    return true;
+}
+});
+    
