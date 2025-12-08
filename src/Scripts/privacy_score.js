@@ -36,4 +36,3 @@ const yourPrivacyData1 ={
 };
 let result = calculatePrivacyScore(yourPrivacyData1);
 console.log('Your browser has this privacy Score: ' + result + ' (excluding high entropy surfaces value). ' + ' Please take actions based on recommendations. Thank you for using.');
- 

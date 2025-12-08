@@ -4,17 +4,16 @@
 let darkMode = false;
 const element1 = document.getElementById('myBtn2')
 element1.addEventListener("click",toggleDarkMode);
-
 function toggleDarkMode() {
-    darkMode = !darkMode; // flips between true/false
+ darkMode = !darkMode; // flips between true/false
 if (darkMode) {
 document.body.style.backgroundColor = "#202029ff";
 document.body.style.color = "white";
 } else {
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = "black";
-    }
+document.body.style.backgroundColor = "white";
+document.body.style.color = "black";
 }
+
 
 
 // toogle for increased font and orginal font.
@@ -29,5 +28,4 @@ document.body.style.fontSize = "large";
     {
     document.body.style.fontSize = "small"; // resets to default
     }
-}
-
+}}
