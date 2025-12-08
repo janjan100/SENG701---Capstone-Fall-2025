@@ -1,9 +1,9 @@
-  //Privacy Score function
-function calculatePrivacyScore(privacyData) {
+
+function calculatePrivacyScore(privacyData) { //Privacy Score function
     let score = 100;
 
     // Check third-party cookies
-    if (privacyData.thirdPartyCookiesAllowed) {
+    if (privacyData.thirdPartyCookiesAllowed === true) {
         score -= 15;
     }
 
@@ -13,16 +13,16 @@ function calculatePrivacyScore(privacyData) {
     }
 
     // Check password saving
-    if (privacyData.passwordSavingEnabled === 'true' ||  privacyData.passwordSavingEnabled === true) {
-        score -= 20;
+    if (privacyData.passwordSavingEnabled === true) {
+        score -= 20; // Anyone can access your passwords on your local device if they have it or if compromised
     }
 
     // Check safe browsing
-    if (privacyData.safeBrowsingEnabled === 'false' ||  privacyData.safeBrowsingEnabled === false) {
-        score -= 20;
+    if (privacyData.safeBrowsingEnabled === false) {
+        score -= 20; // If enabled, blocks popups of browser, and detects phishings attacks and fake websites
     }
      // Check if doNotTrack is on
-    if(privacyData.doNotTrackEnabled === 'false' ||  privacyData.doNotTrackEnabled === false){
+    if(rivacyData.doNotTrackEnabled === false){
       score -=15;
     }   return score;
 }
