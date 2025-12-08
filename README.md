@@ -3,9 +3,10 @@ Capstone Project iBrowse
 
 This plug in extension displays the list of installed extensions (name, version, enabled state) and declared permissions, 
 current states for key privacy toggles (e.g., third-party cookies, WebRTC
-IP policy, password saving, Safe Browsing/ETP levels), and the availability (yes/no) of common high-entropy surfaces without capturing raw fingerprints.
-High-entropy in web browser security relates to properties that uniquely identify a browser, and specific data of a browser.
+IP policy, password saving, Safe Browsing, doNot Track), and the availability (yes/no) of common high-entropy surfaces without capturing raw fingerprints, 
+identfies high-entropy in web browser security relates to properties that uniquely identify a browser, and specific data of a browser, identifies low entropy values, and displays a privacy score.
 
+Instructions for to install onto Google Chrome and Microsoft Edge Browser
 Google Chrome: 
 1. To locate the extension manager page, click on (...) on the far right corner, then scroll down to extension > manage extensions  or click the on the puzzle icon(extensions plugin) on the right hand corner next to the search bar, and click manage extensions.
 
