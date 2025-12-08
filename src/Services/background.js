@@ -80,33 +80,18 @@ navigator.userAgentData.getHighEntropyValues(fields)
   // API for message passing and sending data from console to UI. Uses chrome.runtime API. Retrived from https://developer.chrome.com/docs/extensions/develop/concepts/messaging
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.action === "getData") {
- 
+
     chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
       const thirdPartyCookies = details.value;
-
-       chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
-  const webpRTCIPolicies  = details.value;
-
-chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
-    const passwordSaving = details.value;
-});
 
       // Send the value back to your UI
       sendResponse({
         success: true,
-        thirdPartyCookies: thirdPartyCookies,
-        webpRTCIPolicies: webpRTCIPolicies,
-        passwordSaving: passwordSaving, 
-
-
-
-        });
+        thirdPartyCookies: thirdPartyCookies
       });
-
     });
- 
+
     // Keeps the message channel open for async work
     return true;
-}
+  }
 });
-    

@@ -5,8 +5,7 @@ document.getElementById("myBtn").addEventListener("click", () => {
     if (response.success) { // if response is true, print these values and add to HTML document / webpage 
       document.getElementById("output").innerText = 
         "Third-party cookies enabled: " + response.thirdPartyCookies; // this one works 
-         "WebRTCIPolicies enabled: " + response.webpRTCIPolicies;
-         "PassingAaving enabled: " + response.passwordSaving; 
+    
 
     }
   });
