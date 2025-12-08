@@ -1,5 +1,6 @@
 
 
+// toogle for dark background color and orginal white background color. Presents an error Google chrome extension manager however has full functionality
 let darkMode = false;
 const element1 = document.getElementById('myBtn2')
 element1.addEventListener("click",toggleDarkMode);
@@ -16,6 +17,7 @@ document.body.style.color = "white";
 }
 
 
+// toogle for increased font and orginal font.
 let largeText = false;
 const element2 = document.getElementById('myBtn1');
 element2.addEventListener("click", toggleFontSize);
