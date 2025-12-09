@@ -5,7 +5,8 @@ document.getElementById("myBtn").addEventListener("click", () => {
     if (response.success) { // if response is true, print these values and add to HTML document / webpage 
       document.getElementById("output").innerText = 
         "Here are enabled privacy key toggles. Third-party cookies enabled: " + response.thirdPartyCookies  + " Do Not tracket enabled: "+response.doNotTrackEnabled;
-
+response.doNotTrackEnabled response.passwordSaving response.webpRTCIPolicies response.safeBrowsing
+       
        
       
     
