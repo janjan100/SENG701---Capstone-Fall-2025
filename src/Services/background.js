@@ -77,8 +77,8 @@ navigator.userAgentData.getHighEntropyValues(fields)
   // catch error function and will print what is the error in case of problem
   .catch(err => console.error(err));
   
-  // API for message passing and sending data from console to UI. Uses chrome.runtime API. Retrived from https://developer.chrome.com/docs/extensions/develop/concepts/messaging
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  // Start of function to send key privacy toogles to UI. API for message passing and sending data from console to UI. Uses chrome.runtime API. Retrived from https://developer.chrome.com/docs/extensions/develop/concepts/messaging
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => { //defining function in callback
   if (msg.action === "getData") {
 
   chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
