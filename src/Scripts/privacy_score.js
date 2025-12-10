@@ -36,4 +36,4 @@ const yourPrivacyData1 ={
 };
 // prints and stores function of privacyScore 
 let result = calculatePrivacyScore(yourPrivacyData1);
-console.log('Ranking score: score < 60 : Low security. Score =  60 - 65  : Moderate security. Score = 70 - 80: High security and can be higher. Score = 80 - 100: Very secured.  Your browser has this privacy Score: ' + result + ' (excluding high entropy surfaces value). ' + ' Your privacy score is low: 40. Please take actions based on recommendations. Thank you for using.');
+console.log('Ranking score. Score range 0 - 65: Low security(Needs security).Score Range 66 - 80: Moderate security(Room for improvemnt, needs higher security). || Score Range 81 - 100 : High security(room for improvement). Your browser has this privacy Score: ' + result + ' (excluding high entropy surfaces value). ' + ' Your privacy score is low: 40. Please take actions based on recommendations. Secure your day today!');
