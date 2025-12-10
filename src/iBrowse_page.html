@@ -14,7 +14,7 @@
   <h1>iBrowse</h1>
   <h2> Security Survey Extension </h2>
   <h3>Hello! This extension will help you be more informed about your current extensions, available browser settings, and key privacy toogles(user controls to turn off/turn on for access to personal information, datails and security settings). 
-<!---Instructions for the user for the console if they wish to view console. User can use button or check console -->
+<!---Instructions for the user for the console to view data. User can use button or check console -->
 <p> To view data from the console follow instructions below: </p>
 <ol>
   <li>
@@ -31,14 +31,14 @@
 <!---Drop down list of of uniques features for the user to know what this extension capabilities are -->
 <h3> Here are the unique features listed below: </h3>
 <ul>
-  <li>Display a list of installed extensions (name, version, enabled state) and declared permissions.</li>
-  <li>Show current states for key privacy toggles(third-party cookies,WebRTCIP policy, password saving, Safe Browsing, and DoNotTrack).</li>
-  <li>Show the availability common high-entropy surfaces without capturing raw fingerprints such as "platform", "architecture", "model", "mobile".</li>
-  <li>Compare collected privacy data and provide a privacy score.</li>
-  <li>Display a comparison of popular extensions to installed extensions.</li>
+  <li>Show the list of installed extensions (name, version, enabled state) and declared permissions.</li>
+  <li>Show current states for key privacy settings toogles/settings (Third-party cookies,WebRTCIP policy, Password saving, Safe Browsing, and DoNotTrack).</li>
+  <li>Show the availability(yes/no) of common high-entropy surfaces without storing your data such as "platform", "architecture", "model", and "mobile".</li>
+  <li>Show collected privacy data and provide a privacy score.</li>
+  <li>Show a comparison of popular extensions to installed extensions.</li>
 </ul>
 <!-- Button to return data from console to UI-->
-<button id="myBtn"> Click me to Get Data</button>
+<button id="myBtn"> Click me to Get Data of Key Privacy Settings</button>
 <div id="output"></div>
 <!---Terms users should know and added image (key)-->
 <h3>Key terms (Terms You should Know)
@@ -57,16 +57,19 @@
 <dt>
   <img src="Assets/check-mark1_.png" alt="Green check mark" width="15" height="15">
   Hypertext transfer protocol secure(HTTPS)</dt>
-<dd> The secure version of HTTP, and primary protocol used to send data between a web browser and a website.Source:https://www.cloudflare.com/learning/ssl/what-is-https/</dd>
+<dd> The secure version of HTTP, and primary protocol used to send data between a web browser and a website. Use websites with HTTPS, and be careful with sharing websites without HTTPS. 
+   Source:https://www.cloudflare.com/learning/ssl/what-is-https/</dd>
 
 <dt> 
 <img src="Assets/letter-x_.png" alt="Red letter X" width="15" height="15">
   Hypertext Transfer Protocol (HTTP)
 </dt>
-<dd> The foundation of the World Wide Web, and is used to load webpages using hypertext links. HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack, however not secure.</dd>
+<dd> The foundation of the World Wide Web, and is used to load webpages using hypertext links. HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack, however not secure. Avoid websites only with HTTP</dd>
 Source:https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/</dd>
 
-<dt> Do Not Track Setting </dt>
+<dt>   
+<img src="Assets/check-mark1_.png" alt="Green check mark" width="15" height="15">
+Do Not Track Setting </dt>
 <dd> Browser setting that sends a ‘Do not track’ request to websites when a user visits the website through requesting not to store cookies during searching the imternet. However enabling this setting is not effective on its own. Source: https://www.cookieyes.com/knowledge-base/cookies-101/what-is-do-not-track/#:~:text=Do%20Not%20Track%20is%20a,stop%20websites%20from%20tracking%20users.</dd>
 
 <dt>High entropy hint</dt>
@@ -74,6 +77,13 @@ Source:https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-prot
 
 <dt>Low entropy hint</dt>
 <dd>General information about a browser, and does not uniquely identify the user or browser. For example, a low entropy hint is value that a browser is on a mobile device and does not state which device mobile. </dd>
+
+<dt>
+<img src="Assets/check-mark1_.png" alt="Green check mark" width="15" height="15">
+WebRTC (Web Real-Time Communication) IP Policy</dt>
+<dd> This privacy setting if enabled secures your IP adress online. Without this setting, your IP address can be leaked online. 
+  Source: https://brave.com/glossary/webrtc/
+</dd>
 <!--End of Key terms users should know for novices  <dd>-->
 <h2 heading> Accessibility features </h2>
 <!---Buttons for changing font and color(dark mode), and toogles -->
