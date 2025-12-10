@@ -19,9 +19,9 @@ chrome.management.getAll((extensions) => {
 
   });
 });
- // API for webRTCIP handling from https://developer.chrome.com/docs/extensions/reference/api/privacy
+ // API for printing and storing webRTCIP handling from https://developer.chrome.com/docs/extensions/reference/api/privacy
 
- /*This is an API reference that collects meta data about extension. Returns data to console. GetAll is a getter, and requires mangement privacy in manifest.json to work properly. WebRTC IP handling policy controls how a browser exposes your IP address during peer-to-peer connections. */
+// Returns data to console. GetAll is a getter, and requires mangement privacy in manifest.json to work properly. WebRTC IP handling policy controls how a browser exposes your IP address during peer-to-peer connections. */
 
  chrome.privacy.network.webRTCIPHandlingPolicy.get({}, (details) => {
   const webpRTCIPolicies  = details.value;
@@ -29,7 +29,7 @@ chrome.management.getAll((extensions) => {
 });
 
 
-//API for passwordSavingEnabled browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Returns state of password Saving Browser setting such as true/false/default
+//API for printing and storing passwordSavingEnabled browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Returns state of password Saving Browser setting such as true/false/default
 chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
     const passwordSaving = details.value;
     console.log("Password saving enabled:", passwordSaving);
@@ -37,20 +37,20 @@ chrome.privacy.services.passwordSavingEnabled.get({}, (details) => {
 
 
 
-//API for thirdPartyCookies browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that returns state of thirdPartyCookies Browser setting such as true/false/default.Checks if browser can share cookies with third party
+//API for printing and storing thirdPartyCookies browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that returns state of thirdPartyCookies Browser setting such as true/false/default.Checks if browser can share cookies with third party
 chrome.privacy.websites.thirdPartyCookiesAllowed.get({}, (details) => {
     const thirdPartyCookies = details.value;
     console.log("Third-party cookies allowed:", thirdPartyCookies);
 });
 
-//API for safeBrowsingEnabled browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that Returns state of safeBrowsing setting such as true/false/default.This setting check if website has phishing and blocks popups. 
+//API for printing and storing safeBrowsingEnabled browser setting from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that Returns state of safeBrowsing setting such as true/false/default.This setting check if website has phishing and blocks popups. 
 
 chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
   const safeBrowsing = details.value;
   console.log("Safe browsing setting enabled:" + safeBrowsing);
 });
 
-//API for doNotTracked from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that returns state of doNotTracked setting such as true/false/default.This setting prevent cookies be collected and tracking browsing although not effective by itself
+//API for printing and storing doNotTracked from https://developer.chrome.com/docs/extensions/reference/api/privacy. Privacy key toogle that returns state of doNotTracked setting such as true/false/default.This setting prevent cookies be collected and tracking browsing although not effective by itself
 
 chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
   const doNotTrackEnabled = details.value;
@@ -108,7 +108,7 @@ chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
           // Send values back to UI. Only works for thirdPartyCookies
           sendResponse({
             success: true,
-             thirdPartyCookies: thirdPartyCookies,
+            thirdPartyCookies: thirdPartyCookies,
              doNotTrackEnabled: doNotTrackEnabled, 
              webpRTCIPolicies: webpRTCIPolicies,
              passwordSaving : passwordSaving, 
@@ -121,6 +121,6 @@ chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
  }); 
   });
     // Keep the message channel open for async work
-     }
+  }
     return true;
 });
