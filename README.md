@@ -27,7 +27,7 @@ Microsoft Edge:
 
 3.Click on Load unpacked and locate the src folder of the iBrowse extension saved on local PC.
 
-4.iBrowse extension should be displayed in the all extensions screen.
+4.Upload src folder and iBrowse extension should be displayed in the all extensions screen.
 
 5. Click on the puzzle icon(extensions), click on iBrowse extension box, and right click and click on inspect.
    
