@@ -34,6 +34,6 @@ const yourPrivacyData1 ={
     safeBrowsingEnabled: true, 
     doNotTrackEnabled: false, 
 };
-
+// prints and stores function of privacyScore 
 let result = calculatePrivacyScore(yourPrivacyData1);
 console.log('Ranking score: score < 60 : Low security. Score =  60 - 65  : Moderate security. Score = 70 - 80: High security and can be higher. Score = 80 - 100: Very secured.  Your browser has this privacy Score: ' + result + ' (excluding high entropy surfaces value). ' + ' Your privacy score is low: 40. Please take actions based on recommendations. Thank you for using.');

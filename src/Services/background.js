@@ -105,7 +105,7 @@ chrome.privacy.services.safeBrowsingEnabled.get({}, (details) => {
 chrome.privacy.websites.doNotTrackEnabled.get({},(details) => {
   const doNotTrackEnabled = details.value;
 
-          // Send values back to UI. Only works for thirdPartyCookies
+          // Send values back to UI. One single object with mutiples keys/values. Can add additionally to support different functions and values
           sendResponse({
             success: true,
             thirdPartyCookies: thirdPartyCookies,
