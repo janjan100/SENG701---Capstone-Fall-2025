@@ -10,7 +10,7 @@ document.getElementById("myBtn").addEventListener("click", () => {
        PassSaving Setting enabled: ${response.passwordSaving}. 
        WebpRTCIPolicies Setting enabled: ${response.webpRTCIPolicies}. 
        Safe Browsing Setting enabled: ${response.safeBrowsing}.`
-    } // .innerText: Prints Plain text print on the UI.This is safe way to print!!
+    } // .innerText: Prints Plain text  on the (Ibrowse directly)UI.This is safe way to print!! Bad and avoid: innerHTML
     // Seperate each line for break line. Easy run to break line. 
   });
 });
